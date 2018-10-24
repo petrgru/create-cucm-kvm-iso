@@ -137,7 +137,7 @@ sed -i '/_runtime $@/i\\' /tmp/CUCM/Cisco/hssi/server_implementation/KVM/shared/
 
 
 pushd /tmp/CUCM/
-mkisofs -o $CURR_PATH/$DEST_ISO -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R .
+genisoimage -v -J -r -V CUCM12  -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table  -o  $CURR_PATH/$DEST_ISO .
 popd
 
 umount /tmp/iso
